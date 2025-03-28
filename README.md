@@ -53,7 +53,7 @@ lcss/ ├── pyvenv.cfg # Python virtual environment configuration ├── 
    python manage.py runserver
    ```
 
-###Frontend
+### Frontend
 
 1. Navigate to the frontend directory:
    ```
@@ -70,13 +70,14 @@ lcss/ ├── pyvenv.cfg # Python virtual environment configuration ├── 
 
 
 
-###Usage
+### Usage
+
 Access the backend API at http://127.0.0.1:8000/.
 Access the frontend at http://localhost:3000/.
 Contributing
 Contributions are welcome! Please fork the repository and submit a pull request.
 
-##License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 
