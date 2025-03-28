@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Landcover Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a landcover classification project, which includes a Django-based backend (`landcover_project`) and a frontend (`landcover-frontend`). The backend provides APIs for landcover data processing, while the frontend offers a user interface for interacting with the system.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+landcover_project/ ├── db.sqlite3 # SQLite database file ├── debug_mask.png # Debugging image (mask) ├── debug_original.png # Debugging image (original) ├── manage.py # Django management script ├── trained_landcover_unet_efficientnet-b0_epochs18_patch512_batch16.pth # Pre-trained model ├── landcover_api/ # Django app for the API │ ├── init.py │ ├── admin.py │ ├── apps.py │ ├── models.py # Database models │ ├── serializers.py # API serializers │ ├── tests.py # Unit tests │ ├── urls.py # API routes │ ├── views.py # API views │ ├── migrations/ # Database migrations │ └── pycache/ # Compiled Python files └── landcover_project/ # Django project settings and configurations
 
-### `npm start`
+landcover-frontend/ ├── .gitignore # Git ignore file ├── package.json # Frontend dependencies ├── README.md # Frontend-specific README ├── public/ # Static files └── src/ # Frontend source code
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+lcss/ ├── pyvenv.cfg # Python virtual environment configuration ├── Include/ # Virtual environment include files ├── Lib/ # Virtual environment libraries ├── Scripts/ # Virtual environment scripts └── share/ # Shared files
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Backend**: A Django-based API for landcover classification.
+- **Frontend**: A React-based user interface for interacting with the backend.
+- **Pre-trained Model**: Includes a pre-trained U-Net model with EfficientNet-B0 for landcover classification.
+- **Database**: SQLite database for storing application data.
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Python 3.11
+- Node.js and npm
+- Virtual environment (optional)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup Instructions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
 
-### `npm run eject`
+1. Navigate to the backend directory:
+   ```bash
+   cd landcover_project
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Create and activate a virtual environment:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
+   python -m venv lcss
+   source lcss/Scripts/activate  # On Windows
+   source lcss/bin/activate      # On macOS/Linux
+   ```
+3. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+5. Run database migrations:
+   ```
+   python manage.py migrate
+   ```
+7. Start the development server:
+   ```
+   python manage.py runserver
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+###Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Navigate to the frontend directory:
+   ```
+   cd landcover-frontend
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+5. Start the development server:
+   ```
+   npm start
+   ```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###Usage
+Access the backend API at http://127.0.0.1:8000/.
+Access the frontend at http://localhost:3000/.
+Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
 
-### Code Splitting
+##License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   
