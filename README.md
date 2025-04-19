@@ -1,4 +1,4 @@
-# Landcover Project
+# Landcover Segmentation Project
 
 This repository contains a landcover classification project, which includes a Django-based backend (`landcover_project`) and a frontend (`landcover-frontend`). The backend provides APIs for landcover data processing, while the frontend offers a user interface for interacting with the system.
 
